@@ -1,6 +1,6 @@
 .header {
     padding: 20px 16px 8px 16px;
-    background-color: rgb(5, 7, 99);
+    background: linear-gradient(to bottom, rgb(4, 5, 78), rgb(34, 47, 121));
 }
 
 button {

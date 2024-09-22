@@ -13,7 +13,7 @@ export default function Weather() {
 
     useEffect(() => {
         const fetchWeatherData = async () => {
-            const coordinateResponse = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=582e92759378a0b3ea0201210b74a023`)
+            const coordinateResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=582e92759378a0b3ea0201210b74a023`)
             const coordinateData = await coordinateResponse.json()
             setCoordinateDataLength(coordinateData.length)
             console.log(coordinateData)
@@ -67,7 +67,7 @@ export default function Weather() {
     return (
         <div className="container weatherContainer">
             <header>
-                <h1>&nbsp;Weather&#127752;</h1>
+                <h1>&nbsp;Weather🌥️</h1>
                 <h6>&nbsp;&nbsp;what's it like outside?</h6>
             </header>
             <main>
