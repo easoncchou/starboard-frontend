@@ -16,7 +16,7 @@ export default function Weather() {
             const coordinateResponse = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=582e92759378a0b3ea0201210b74a023`)
             const coordinateData = await coordinateResponse.json()
             setCoordinateDataLength(coordinateData.length)
-            console.log(coordinateData)
+            // console.log(coordinateData)
             // console.log(`${coordinateData[0].lat}, ${coordinateData[0].lon}`)
             const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinateData[locationIndex].lat}&lon=${coordinateData[locationIndex].lon}&appid=582e92759378a0b3ea0201210b74a023&units=metric`)
             let weatherData = await weatherResponse.json()
@@ -52,7 +52,7 @@ export default function Weather() {
             const ceiling = coordinateDataLength > 0 ? coordinateDataLength : 1
             return (prevLocationIndex + 1) % ceiling
         })
-        console.log(locationIndex)
+        // console.log(locationIndex)
     }
 
     let suggestion = <p>&nbsp;</p>
@@ -65,7 +65,7 @@ export default function Weather() {
     }
 
     return (
-        <div className="container weatherContainer">
+        <div className="container widget-container">
             <header>
                 <h1>&nbsp;Weather🌥️</h1>
                 <h6>&nbsp;&nbsp;what's it like outside?</h6>

@@ -1,6 +1,6 @@
 .header {
     padding: 20px 16px 8px 16px;
-    background: linear-gradient(to bottom, rgb(4, 5, 78), rgb(34, 47, 121));
+    background: linear-gradient(to right, rgb(4, 5, 78), rgb(35, 49, 128));
 }
 
 button {
@@ -8,13 +8,46 @@ button {
     background-color: rgb(108, 172, 211);
 }
 
-.weatherContainer {
+.widget-container {
     margin: 40px auto;
     padding: 20px 20px;
     border: 2px solid rgb(24, 65, 201);
     border-radius: 20px;
 }
 
-.button {
-    margin: 10px 20px 20px auto; 
+.item-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.to-do-item {
+    margin: 0;
+    padding: 0 0 0 10px;
+    display: grid;
+    grid-template-columns: 5% 50% 20% 10%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #99b4c3;
+}
+.to-do-item div {
+    margin: 0;
+    padding: 0;
+    margin: 1rem;
+}
+.to-do-item button {
+    margin: 0;
+    padding: 5%;
+    background-color:#e8f2f5;
+    border-color: #e8f2f5;
+}
+
+@media (prefers-color-scheme: light) {
+    .header {
+        background: #d5f8ff
+    }
+
+    .widget-container {
+        border-color: rgb(167, 173, 173);
+    }
 }

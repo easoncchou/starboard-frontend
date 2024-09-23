@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "task": "Buy groceries",
+        "done": false,
+        "dateToComplete": "2024-09-25"
+    },
+    {
+        "id": 2,
+        "task": "Finish React project",
+        "done": true,
+        "dateToComplete": "2024-09-20"
+    },
+    {
+        "id": 3,
+        "task": "Schedule dentist appointment",
+        "done": false,
+        "dateToComplete": "2024-09-27"
+    },
+    {
+        "id": 4,
+        "task": "Read a book",
+        "done": true,
+        "dateToComplete": "2024-09-18"
+    },
+    {
+        "id": 5,
+        "task": "Workout for 30 minutes",
+        "done": false,
+        "dateToComplete": "2024-09-22"
+    }
+]
