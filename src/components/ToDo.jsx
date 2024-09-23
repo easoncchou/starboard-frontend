@@ -12,7 +12,7 @@ export default function ToDo() {
         return `${year}-${month}-${day}`;
     };
 
-    const [toDoItems, setToDoItems] = useState(toDoItemsData)
+    const [toDoItems, setToDoItems] = useState(toDoItemsData.sort((a, b) => new Date(a.dateToComplete) - new Date(b.dateToComplete)))
 
     const [taskInput, setTaskInput] = useState("")
 
@@ -44,7 +44,11 @@ export default function ToDo() {
     function handleSubmit(event) {
         event.preventDefault()
         if (taskInput.length > 0) {
-            toDoItems.push({task: taskInput, done: false, dateToComplete: dateInput})
+            setToDoItems(prevToDoItems => {
+                const newToDoItems = [...prevToDoItems, {task: taskInput, done: false, dateToComplete: dateInput}]
+                newToDoItems.sort((a, b) => new Date(a.dateToComplete) - new Date(b.dateToComplete))
+                return newToDoItems
+            })
             setTaskInput('')
             setDateInput(getCurrentDate())
         }

@@ -38,8 +38,8 @@ button {
 .to-do-item button {
     margin: 0;
     padding: 5%;
-    background-color:#e8f2f5;
-    border-color: #e8f2f5;
+    background-color:#dde5e8;
+    border-color: #dde5e8;
 }
 
 @media (prefers-color-scheme: light) {
@@ -49,5 +49,12 @@ button {
 
     .widget-container {
         border-color: rgb(167, 173, 173);
+    }
+
+    .to-do-item button {
+        margin: 0;
+        padding: 5%;
+        background-color:#e8f2f5;
+        border-color: #e8f2f5;
     }
 }
