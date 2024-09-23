@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ToDoItem from './ToDoItem'
 import toDoItemsData from '../mockToDoData.json'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function ToDo() {
 
@@ -45,7 +46,7 @@ export default function ToDo() {
         event.preventDefault()
         if (taskInput.length > 0) {
             setToDoItems(prevToDoItems => {
-                const newToDoItems = [...prevToDoItems, {task: taskInput, done: false, dateToComplete: dateInput}]
+                const newToDoItems = [...prevToDoItems, {id: uuidv4(), task: taskInput, done: false, dateToComplete: dateInput}]
                 newToDoItems.sort((a, b) => new Date(a.dateToComplete) - new Date(b.dateToComplete))
                 return newToDoItems
             })
