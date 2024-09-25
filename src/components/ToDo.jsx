@@ -6,11 +6,11 @@ import { v4 as uuidv4 } from 'uuid'
 export default function ToDo() {
 
     const getCurrentDate = () => {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-        const day = String(today.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        const today = new Date()
+        const year = today.getFullYear()
+        const month = String(today.getMonth() + 1).padStart(2, '0') // Months are zero-based
+        const day = String(today.getDate()).padStart(2, '0')
+        return `${year}-${month}-${day}`
     };
 
     const [toDoItems, setToDoItems] = useState(toDoItemsData.sort((a, b) => new Date(a.dateToComplete) - new Date(b.dateToComplete)))
@@ -19,7 +19,19 @@ export default function ToDo() {
 
     const [dateInput, setDateInput] = useState(getCurrentDate)
 
-    useEffect(() => {}, [])
+    useEffect(() => {
+        async function fetchToDoData() {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}tasks/eason`, {
+                headers: {
+                    authorization: import.meta.env.VITE_API_KEY
+                }
+            })
+            const data = await response.json()
+            console.log(data)
+            return response
+        }
+        fetchToDoData()
+    }, [])
 
     function handleTaskChange(event) {
         setTaskInput(event.target.value)
